@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-class Add extends React.Component {
+class AddCake extends React.Component {
 
  constructor(props) {
     super(props);
@@ -71,4 +72,11 @@ class Add extends React.Component {
   }
 }
 
-export default Add
+AddCake.propTypes = {
+  errors: PropTypes.arrayOf(PropTypes.shape({
+    field: PropTypes.string,
+    message: PropTypes.string.isRequired,
+  }).isRequired).isRequired
+}
+
+export default AddCake
